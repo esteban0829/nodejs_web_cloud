@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esteban's Cloud Project</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-1.7.1.js"></script>
+</head>
+
+<body>
+	<div>
+		<input type="text" id="txt"/>
+		<input type="button" value="fileDown" id="btn" onclick="getFiledown()" />
+	</div>
+	<script type="text/javascript">
+		function getFiledown(){
+				var txt = document.getElementById("txt");
+				alert(txt.value);
+				window.location = '/download/' + txt.value;
+		}
+	</script>
+</body>
+</html>
