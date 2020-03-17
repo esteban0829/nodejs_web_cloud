@@ -26,10 +26,11 @@ http.createServer(function(req, res){
           var htmlTemplate = template.html(title, list, body, control);
           res.writeHead(200);
           res.end(htmlTemplate);//go to mainpage
-      });}
-    else{
-      
+      });
+    }else{
+
     }
+
   }else if(pathname === '/fileupload_process') {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -43,6 +44,7 @@ http.createServer(function(req, res){
         res.end();
       });
     });
+
   }else if(pathname === '/fileupload'){
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write('<form action="fileupload_process" method="post" enctype="multipart/form-data">');
@@ -50,6 +52,7 @@ http.createServer(function(req, res){
     res.write('<input type="submit">');
     res.write('</form>');
     res.end();
+
   }
 
 }).listen(8080);
